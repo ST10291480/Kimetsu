@@ -1,0 +1,12 @@
+{
+  "name": "kitsu-anime-journal",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A responsive anime discovery and journaling app.",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

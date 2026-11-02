@@ -1,0 +1,6 @@
+﻿# Local downloads and environment files
+images/*.crdownload
+.env
+.env.*
+!.env.example
+node_modules/

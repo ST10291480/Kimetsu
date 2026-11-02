@@ -1,0 +1,21 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Start Kitsu server",
+      "type": "process",
+      "command": "node",
+      "args": ["server.js"],
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "kitsu-server",
+        "pattern": { "regexp": "^$" },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "Kitsu server ready at",
+          "endsPattern": "Kitsu server ready at"
+        }
+      }
+    }
+  ]
+}

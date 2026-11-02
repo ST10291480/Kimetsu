@@ -1,4 +1,4 @@
-﻿# Kitsu
+# Kitsu
 
 A browser based anime discovery and journaling app with a local anime catalog and poster artwork.
 

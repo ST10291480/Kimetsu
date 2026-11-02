@@ -8,6 +8,7 @@ Kitsu is a responsive anime discovery and journaling app. Browse a curated catal
 
 - Browse and search a catalog of 300 popular anime
 - Filter titles by genre and view ratings, status, and episode details
+- Share direct links to anime details and use browser back/forward navigation
 - Save titles to your library and track your watching journal
 - Explore profile, community, friends, and anime news views
 - Optionally load live favorites and metadata from AniDB
@@ -52,6 +53,7 @@ Kitsu has no database or account backend: profiles, library entries, and activit
 | `styles.css`, `extras.css`, `mobile.css` | Core, supplemental, and responsive styles |
 | `popular-anime.js` | Curated anime catalog data |
 | `images/` | Local poster artwork |
+| `icons/` | Progressive web app install icons |
 | `server.js` | Lightweight local Node.js server |
 | `scripts/` | Catalog and poster maintenance scripts |
 

@@ -5,8 +5,8 @@
   <meta name="theme-color" content="#10100f"><meta name="description" content="Discover anime, build your personal watchlist, and keep a journal of the stories you love.">
   <meta property="og:type" content="website"><meta property="og:title" content="Kitsu — Your anime, beautifully kept"><meta property="og:description" content="Discover anime, build your personal watchlist, and keep a journal of the stories you love.">
   <title>Kitsu — Your anime, beautifully kept</title>
-  <link rel="icon" href="./icon.svg" type="image/svg+xml"><link rel="manifest" href="./manifest.webmanifest">
-  <link rel="apple-touch-icon" href="./icon.svg">
+  <link rel="icon" href="./icon.svg" type="image/svg+xml"><link rel="icon" href="./icons/icon-192.png" type="image/png" sizes="192x192"><link rel="manifest" href="./manifest.webmanifest">
+  <link rel="apple-touch-icon" href="./icons/icon-192.png">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
@@ -14,11 +14,12 @@
   <link rel="stylesheet" href="mobile.css">
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <div class="app-shell">
     <aside class="sidebar">
       <a class="brand" href="#home" aria-label="Kitsu home"><span class="brand-mark">結</span><span>KITSU<span class="brand-dot">.</span><small>YOUR ANIME JOURNAL</small></span></a>
       <div class="nav-label">YOUR SPACE</div>
-      <nav class="main-nav">
+      <nav class="main-nav" aria-label="Your space">
         <button class="nav-item active" data-view="home"><span>⌂</span> Discover</button>
         <button class="nav-item" data-view="watchlist"><span>▤</span> My library <b class="nav-count" id="library-count">0</b></button>
         <button class="nav-item" data-view="journal"><span>◷</span> Watching</button>
@@ -28,7 +29,7 @@
         <button class="nav-item" data-view="profile"><span>♙</span> My profile</button>
       </nav>
       <div class="nav-label explore-label">EXPLORE</div>
-      <nav class="main-nav">
+      <nav class="main-nav" aria-label="Explore by genre">
         <button class="nav-item" data-filter="Shōnen"><span class="genre-dot coral"></span> Shōnen</button>
         <button class="nav-item" data-filter="Adventure"><span class="genre-dot gold"></span> Adventure</button>
         <button class="nav-item" data-filter="Fantasy"><span class="genre-dot green"></span> Fantasy</button>
@@ -37,13 +38,13 @@
       <div class="sidebar-bottom"><div class="sidebar-note"><span class="note-symbol">✳</span><p>Every story leaves<br>a little <em>something</em> behind.</p><span class="note-jp">物語の余韻</span></div><button class="settings-link" id="open-settings"><span>⚙</span> Appearance & settings</button></div>
     </aside>
 
-    <main class="main-content">
+    <main class="main-content" id="main-content">
       <header class="topbar"><div class="breadcrumb"><span>YOUR SPACE</span><b>/</b><strong id="crumb-label">DISCOVER</strong></div><div class="top-actions"><label class="search-box"><span>⌕</span><input id="search" placeholder="Find your next story…" aria-label="Search anime"><kbd>⌘ K</kbd></label><button class="icon-button" title="Notifications">♧<i></i></button><button class="avatar avatar-small" id="top-avatar">ゆ</button></div></header>
       <div class="page" id="page"></div>
       <footer class="footer"><span>結 — stories that stay with you.</span><span>MADE FOR THE LOVE OF ANIME <b>✳</b></span></footer>
     </main>
   </div>
-  <div class="overlay" id="overlay" aria-hidden="true"><section class="dialog" id="dialog" role="dialog" aria-modal="true"></section></div>
+  <div class="overlay" id="overlay" aria-hidden="true"><section class="dialog" id="dialog" role="dialog" aria-modal="true" tabindex="-1"></section></div>
   <script src="popular-anime.js"></script>
   <script src="app.js"></script>
   <script>if ('serviceWorker' in navigator && location.protocol !== 'file:') navigator.serviceWorker.register('./sw.js').catch(() => {});</script>

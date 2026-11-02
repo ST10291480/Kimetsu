@@ -108,7 +108,7 @@ const server = http.createServer((req, res) => {
     }
 
     const ext = path.extname(file).toLowerCase();
-    res.setHeader('Cache-Control', ext === '.html' || ext === '.webmanifest' || path.basename(file) === 'sw.js'
+    res.setHeader('Cache-Control', ['.html', '.js', '.css', '.webmanifest'].includes(ext) || path.basename(file) === 'sw.js'
       ? 'no-cache'
       : 'public, max-age=3600');
     res.writeHead(200, { 'Content-Type': types[ext] || 'application/octet-stream' });

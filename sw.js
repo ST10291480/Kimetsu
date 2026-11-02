@@ -9,6 +9,8 @@ const SHELL = [
   './app.js',
   './manifest.webmanifest',
   './icon.svg',
+  './icons/icon-192.png',
+  './icons/icon-512.png',
   './images/TVAnimationYuYuHakushoPoster.jpg'
 ];
 
@@ -29,7 +31,7 @@ self.addEventListener('fetch', event => {
   if (url.origin !== self.location.origin) return;
 
   event.respondWith((async () => {
-    const cached = await caches.match(request);
+    const cached = request.destination === 'image' ? await caches.match(request) : null;
     if (cached) return cached;
     try {
       const response = await fetch(request);
@@ -44,6 +46,8 @@ self.addEventListener('fetch', event => {
       }
       return response;
     } catch (error) {
+      const fallback = await caches.match(request);
+      if (fallback) return fallback;
       if (request.mode === 'navigate') return (await caches.match('./index.html')) || Response.error();
       return Response.error();
     }

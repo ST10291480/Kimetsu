@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#10100f"><title>Kitsu — Your anime, beautifully kept</title>
+  <meta name="theme-color" content="#10100f"><meta name="description" content="Discover anime, build your personal watchlist, and keep a journal of the stories you love.">
+  <meta property="og:type" content="website"><meta property="og:title" content="Kitsu — Your anime, beautifully kept"><meta property="og:description" content="Discover anime, build your personal watchlist, and keep a journal of the stories you love.">
+  <title>Kitsu — Your anime, beautifully kept</title>
+  <link rel="icon" href="./icon.svg" type="image/svg+xml"><link rel="manifest" href="./manifest.webmanifest">
+  <link rel="apple-touch-icon" href="./icon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
@@ -42,5 +46,6 @@
   <div class="overlay" id="overlay" aria-hidden="true"><section class="dialog" id="dialog" role="dialog" aria-modal="true"></section></div>
   <script src="popular-anime.js"></script>
   <script src="app.js"></script>
+  <script>if ('serviceWorker' in navigator && location.protocol !== 'file:') navigator.serviceWorker.register('./sw.js').catch(() => {});</script>
 </body>
 </html>

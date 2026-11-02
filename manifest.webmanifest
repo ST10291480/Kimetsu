@@ -1,0 +1,19 @@
+{
+  "id": "./",
+  "name": "Kitsu — Your Anime Journal",
+  "short_name": "Kitsu",
+  "description": "Discover anime and keep a personal journal of the stories you love.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f6f4ef",
+  "theme_color": "#10100f",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

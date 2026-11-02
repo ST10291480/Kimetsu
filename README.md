@@ -11,6 +11,8 @@ Kitsu is a responsive anime discovery and journaling app. Browse a curated catal
 - Save titles to your library and track your watching journal
 - Explore profile, community, friends, and anime news views
 - Optionally load live favorites and metadata from AniDB
+- Install Kitsu as a progressive web app and browse the cached shell offline (HTTPS hosting required)
+- Export and restore a portable backup of your library and activity
 - Keep personal app data in browser storage, with no account required
 
 ## Preview
@@ -33,7 +35,13 @@ npm start
 
 Open [http://localhost:8080](http://localhost:8080) in your browser. To use another port, set the `PORT` environment variable before starting the server.
 
-The catalog and local features work without API credentials. To enable AniDB live data, enter your registered AniDB client name in the app's settings.
+The catalog and local features work without API credentials. To enable AniDB live data, enter your registered AniDB client name in the app's settings. Requests go through the Node server so they also work when Kitsu is hosted over HTTPS.
+
+## Deployment
+
+Deploy this repository as a Node.js web service with Node.js 18 or later and use `npm start` as the start command. The server listens on `0.0.0.0` and uses the platform-provided `PORT` value. Set `HOST` only if your hosting platform requires a different bind address.
+
+Kitsu has no database or account backend: profiles, library entries, and activity are stored in each visitor's browser. The community and friends views are local demo features, so visitors do not share posts with one another. Users can export a backup from their profile before clearing browser data or changing devices.
 
 ## Project structure
 
@@ -53,4 +61,4 @@ Vanilla JavaScript, HTML, and CSS, served by Node.js. The app has no runtime pac
 
 ## Data and privacy
 
-Your library, settings, journal, and community activity are stored in your browser's `localStorage`. They are local to that browser and are not synchronized to a server. AniDB live data is optional and requires a registered client name configured in the app.
+Your library, settings, ratings, and activity are stored in your browser's `localStorage`. They are local to that browser and are not synchronized to a server. The optional AniDB proxy accepts only the supported metadata requests and applies a per-IP request limit; it does not store the configured client name or user activity.

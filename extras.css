@@ -4,3 +4,4 @@
 .star-pair button.selected{color:#d3a348}
 
 .catalog-pager{display:flex;justify-content:center;align-items:center;gap:16px;margin:0 0 30px;color:var(--muted);font-size:10px}.catalog-pager button:disabled{opacity:.4;cursor:default}
+.backup-import{display:inline-block;cursor:pointer;margin-left:5px}
